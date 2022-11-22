@@ -14,13 +14,9 @@ public class ProductRepositoryTest {
     Product product1 = new Book(3, "Book 1", 120, "Author 1");
     Product product2 = new Book(8, "Book 2", 110, "Author 2");
     Product product3 = new Book(11, "Book 3", 115, "Author 3");
-    Product product4 = new Book(12, "Book 4", 120, "Author 4");
-    Product product5 = new Smartphone(16, "Book 5", 95, "Author 5");
-    Product product6 = new Smartphone(19, "Smartphone 1", 10000, "Producer 1");
-    Product product7 = new Smartphone(25, "Smartphone 2", 9000, "Producer 2");
-    Product product8 = new Smartphone(37, "Smartphone 3", 11500, "Producer 3");
-    Product product9 = new Smartphone(48, "Smartphone 4", 9500, "Producer 4");
-    Product product10 = new Smartphone(64, "Smartphone 5", 12000, "Producer 5");
+    Product product4 = new Smartphone(19, "Smartphone 1", 10000, "Producer 1");
+    Product product5 = new Smartphone(25, "Smartphone 2", 9000, "Producer 2");
+    Product product6 = new Smartphone(37, "Smartphone 3", 11500, "Producer 3");
 
     @BeforeEach
     public void setup() {
@@ -30,18 +26,13 @@ public class ProductRepositoryTest {
         repo.save(product4);
         repo.save(product5);
         repo.save(product6);
-        repo.save(product7);
-        repo.save(product8);
-        repo.save(product9);
-        repo.save(product10);
-
     }
 
     @Test
     public void shouldRemoveBiId() {
-        repo.removeById(37);
+        repo.removeById(25);
 
-        Product[] expected = {product1, product2, product3, product4, product5, product6, product7, product9, product10};
+        Product[] expected = {product1, product2, product3, product4, product6};
         Product[] actual = repo.findAll();
 
         Assertions.assertArrayEquals(expected, actual);

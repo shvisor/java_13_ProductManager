@@ -37,10 +37,8 @@ public class ProductManagerTest {
         manager.add(product4);
         manager.add(product5);
 
-        manager.searchBy("Book 4");
-
         Product[] expected = {product4};
-        Product[] actual = manager.searchBy(product4.getName());
+        Product[] actual = manager.searchBy("Book 4");
 
         Assertions.assertArrayEquals(expected, actual);
     }

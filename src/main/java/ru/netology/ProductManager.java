@@ -16,13 +16,16 @@ public class ProductManager {
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукты
-        Product[] tmp = new Product[result.length + 1];
-        for (Product product: repo.findAll()) {
+        for (Product product : repo.findAll()) {
             if (matches(product, text)) { // "добавляем в конец" массива result продукт product
+                Product[] tmp = new Product[result.length + 1];
+                for (int i = 0; i < result.length; i++) {
+                    tmp[i] = result[i];
+                }
                 tmp[tmp.length - 1] = product;
+                result = tmp;
             }
         }
-        result = tmp;
         return result;
     }
 

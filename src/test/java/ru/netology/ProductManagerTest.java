@@ -73,4 +73,31 @@ public class ProductManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldSearchByMultipleAuthor() {
+
+        Product[] expected = {product1, product2, product3};
+        Product[] actual = manager.searchBy("Author");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchByMultipleSmartphone() {
+
+        Product[] expected = {product4, product5, product6};
+        Product[] actual = manager.searchBy("Producer");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchByWhenNull() {
+
+        Product[] expected = {};
+        Product[] actual = manager.searchBy("Butterfly");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }

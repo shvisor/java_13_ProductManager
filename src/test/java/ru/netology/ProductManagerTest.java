@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Product;
 import ru.netology.repository.ProductRepository;
+import ru.netology.manager.ProductManager;
 
 public class ProductManagerTest {
     ProductRepository repo = new ProductRepository();

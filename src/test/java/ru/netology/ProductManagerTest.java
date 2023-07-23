@@ -7,6 +7,7 @@ import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 import ru.netology.repository.ProductRepository;
+import ru.netology.manager.ProductManager;
 
 public class ProductManagerTest {
     ProductRepository repo = new ProductRepository();
